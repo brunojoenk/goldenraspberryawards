@@ -9,9 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.util.ResourceUtils;
 
 import javax.annotation.PostConstruct;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.List;
 
 
@@ -27,15 +25,16 @@ public class DataLoaderConfig {
     @PostConstruct
     public void init() {
         try {
-            final File file = ResourceUtils.getFile("classpath:movielist.csv");
-            List<MovieCSV> movieCSVList = new CsvToBeanBuilder(new FileReader(file))
+            final InputStream in = getClass().getResourceAsStream("/movielist.csv");
+            final BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+            final List<MovieCSV> movieCSVList = new CsvToBeanBuilder(reader)
                     .withSeparator(';')
                     .withType(MovieCSV.class)
                     .build()
                     .parse();
 
             movieCSVList.forEach(movieCSV -> movieRepository.save(MovieMapper.toEntity(movieCSV)));
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
