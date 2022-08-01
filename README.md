@@ -12,9 +12,15 @@
 - [Swagger](https://github.com/springfox/springfox#getting-started);
 
 #### Run locally
+- Option 1:
+```sh
+mvn spring-boot:run
+```
+
+- Option 2:
 ```sh
 mvn clean install
-mvn spring-boot:run
+java -jar target/goldenraspberryawards-0.0.1-SNAPSHOT.jar
 ```
 
 #### Endpoints
