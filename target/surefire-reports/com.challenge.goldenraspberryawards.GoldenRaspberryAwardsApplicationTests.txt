@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.challenge.goldenraspberryawards.GoldenRaspberryAwardsApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.907 s - in com.challenge.goldenraspberryawards.GoldenRaspberryAwardsApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.041 s - in com.challenge.goldenraspberryawards.GoldenRaspberryAwardsApplicationTests

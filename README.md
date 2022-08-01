@@ -11,10 +11,12 @@
 - [Banco H2](https://www.h2database.com/html/main.html);
 - [JUnit 5](https://junit.org/junit5/);
 - [Lombok](https://projectlombok.org/);
+- [Opencsv](http://opencsv.sourceforge.net/);
 
 #### Run locally
 ```sh
 mvn clean install
+mvn spring-boot:run
 ```
 
 #### Endpoints
