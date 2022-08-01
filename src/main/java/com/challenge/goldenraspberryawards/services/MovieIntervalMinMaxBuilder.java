@@ -21,6 +21,10 @@ public class MovieIntervalMinMaxBuilder {
     public MovieMinMaxIntervalDTO build() {
         final List<MovieIntervalDTO> listIntervalOrdered = movieIntervalCalculator.calculateWinnersByIntervalAsc();
 
+        if (listIntervalOrdered.size() == 0) {
+            return new MovieMinMaxIntervalDTO();
+        }
+
         final Integer minInterval = listIntervalOrdered.get(0).getInterval();
         final Integer maxInterval = listIntervalOrdered.get(listIntervalOrdered.size() - 1).getInterval();
 

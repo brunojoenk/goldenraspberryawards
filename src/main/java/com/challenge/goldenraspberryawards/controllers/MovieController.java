@@ -4,6 +4,7 @@ import com.challenge.goldenraspberryawards.dtos.MovieMinMaxIntervalDTO;
 import com.challenge.goldenraspberryawards.services.MovieIntervalMinMaxBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,8 +20,8 @@ public class MovieController {
     }
 
     @GetMapping("/min-max")
-    public MovieMinMaxIntervalDTO get() {
-        return movieIntervalMinMaxBuilder.build();
+    public ResponseEntity<MovieMinMaxIntervalDTO> get() {
+        return ResponseEntity.ok(movieIntervalMinMaxBuilder.build());
     }
 
 }
