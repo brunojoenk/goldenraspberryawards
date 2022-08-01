@@ -1,7 +1,7 @@
 ## goldenraspberryawards
 - Heroku app link: https://goldenraspberryawards.herokuapp.com/
 
-#### Para fazer para criar a aplicação em sua conta do Heroku, basta clicar
+#### To deploy on Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 #### Tools
