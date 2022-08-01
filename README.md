@@ -1,9 +1,6 @@
 ## Golden Raspberry Awards
 - Heroku app link: https://goldenraspberryawards.herokuapp.com/
 
-#### To deploy on Heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
 #### Tools
 - [Java 11](https://docs.oracle.com/en/java/javase/11/);
 - [Spring-Boot 2.7.2](https://spring.io/projects/spring-boot);
