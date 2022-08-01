@@ -1,4 +1,4 @@
-## goldenraspberryawards
+## Golden Raspberry Awards
 - Heroku app link: https://goldenraspberryawards.herokuapp.com/
 
 #### To deploy on Heroku
@@ -12,6 +12,7 @@
 - [JUnit 5](https://junit.org/junit5/);
 - [Lombok](https://projectlombok.org/);
 - [Opencsv](http://opencsv.sourceforge.net/);
+- [Swagger](https://github.com/springfox/springfox#getting-started);
 
 #### Run locally
 ```sh
@@ -23,3 +24,4 @@ mvn spring-boot:run
 - http://localhost:8080 - Root
 - http://localhost:8080/h2-console - H2 Database
 - http://localhost:8080/awards/movies/min-max - API to get min max interval of producers winners
+- http://localhost:8080/swagger-ui/index.html#/movie-controller - Swagger - All APIs from MovieController
