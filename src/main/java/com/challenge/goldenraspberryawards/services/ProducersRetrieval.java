@@ -35,7 +35,7 @@ public class ProducersRetrieval {
                 .forEach(movieDTO -> {
                     String[] producers = movieDTO.getProducer().split(REGEX_WHEN_HAS_MORE_THAN_ONE_PRODUCER);
                     for (String producerName : producers) {
-                        if (!producerName.trim().equals(Strings.EMPTY)) {
+                        if (!producerName.strip().equals(Strings.EMPTY)) {
                             MovieDTO movieResponseAfterSplit = new MovieDTO();
                             movieResponseAfterSplit.setProducer(producerName.trim());
                             movieResponseAfterSplit.setYear(movieDTO.getYear());
