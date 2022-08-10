@@ -1,7 +1,6 @@
 package com.challenge.goldenraspberryawards.controllers;
 
 import com.challenge.goldenraspberryawards.GoldenRaspberryAwardsApplication;
-import com.challenge.goldenraspberryawards.dtos.MovieMinMaxIntervalDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,27 +19,27 @@ public class MovieControllerTest {
 
     @Test
     public void testSuccess() {
-        ResponseEntity<MovieMinMaxIntervalDTO> responseRetrieval = restTemplate
-                .getForEntity("/awards/movies/min-max", MovieMinMaxIntervalDTO.class);
+        ResponseEntity<MovieController.MinMaxDTO> responseRetrieval = restTemplate
+                .getForEntity("/awards/movies/min-max", MovieController.MinMaxDTO.class);
 
         assertThat(responseRetrieval.getStatusCode(), equalTo(HttpStatus.OK));
-        assertThat(responseRetrieval.getBody().getMin().size(), equalTo(1));
-        assertThat(responseRetrieval.getBody().getMin().get(0).getProducer(), equalTo("Joel Silver"));
-        assertThat(responseRetrieval.getBody().getMin().get(0).getInterval(), equalTo(1));
-        assertThat(responseRetrieval.getBody().getMin().get(0).getPreviousWin(), equalTo(1990));
-        assertThat(responseRetrieval.getBody().getMin().get(0).getFollowingWin(), equalTo(1991));
+        assertThat(responseRetrieval.getBody().min().size(), equalTo(1));
+        assertThat(responseRetrieval.getBody().min().get(0).getProducer(), equalTo("Joel Silver"));
+        assertThat(responseRetrieval.getBody().min().get(0).getInterval(), equalTo(1));
+        assertThat(responseRetrieval.getBody().min().get(0).getPreviousWin(), equalTo(1990));
+        assertThat(responseRetrieval.getBody().min().get(0).getFollowingWin(), equalTo(1991));
 
-        assertThat(responseRetrieval.getBody().getMax().get(0).getProducer(), equalTo("Matthew Vaughn"));
-        assertThat(responseRetrieval.getBody().getMax().get(0).getInterval(), equalTo(13));
-        assertThat(responseRetrieval.getBody().getMax().get(0).getPreviousWin(), equalTo(2002));
-        assertThat(responseRetrieval.getBody().getMax().get(0).getFollowingWin(), equalTo(2015));
+        assertThat(responseRetrieval.getBody().max().get(0).getProducer(), equalTo("Matthew Vaughn"));
+        assertThat(responseRetrieval.getBody().max().get(0).getInterval(), equalTo(13));
+        assertThat(responseRetrieval.getBody().max().get(0).getPreviousWin(), equalTo(2002));
+        assertThat(responseRetrieval.getBody().max().get(0).getFollowingWin(), equalTo(2015));
 
     }
 
     @Test
     public void testNotFoundUri() {
-        ResponseEntity<MovieMinMaxIntervalDTO> responseRetrieval = restTemplate
-                .getForEntity("/awards/notfound", MovieMinMaxIntervalDTO.class);
+        ResponseEntity<MovieController.MinMaxDTO> responseRetrieval = restTemplate
+                .getForEntity("/awards/notfound", MovieController.MinMaxDTO.class);
 
         assertThat(responseRetrieval.getStatusCode(), equalTo(HttpStatus.NOT_FOUND));
 
@@ -48,8 +47,8 @@ public class MovieControllerTest {
 
     @Test
     public void testIncorrectMethod() {
-        ResponseEntity<MovieMinMaxIntervalDTO> responseRetrieval = restTemplate
-                .postForEntity("/awards/movies/min-max", MovieMinMaxIntervalDTO.class, MovieMinMaxIntervalDTO.class);
+        ResponseEntity<MovieController.MinMaxDTO> responseRetrieval = restTemplate
+                .postForEntity("/awards/movies/min-max", MovieController.MinMaxDTO.class, MovieController.MinMaxDTO.class);
 
         assertThat(responseRetrieval.getStatusCode(), equalTo(HttpStatus.METHOD_NOT_ALLOWED));
 
