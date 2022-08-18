@@ -27,7 +27,7 @@ public class ProducersRetrieval {
 
     public Map<String, List<MovieDTO>> getMoviesByProducer() {
 
-        final List<Movie> movies = movieRepository.findByWinnerTrueOrderByYearAsc();
+        final List<Movie> movies = movieRepository.findByWinnerTrueOrderByYearAsc().stream().toList();
         final List<MovieDTO> movieDTOS = new ArrayList<>();
 
         movies.stream()

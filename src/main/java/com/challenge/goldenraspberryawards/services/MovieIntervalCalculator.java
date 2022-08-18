@@ -45,6 +45,6 @@ public class MovieIntervalCalculator {
                     }
                 });
 
-        return listCalculateIntervals.stream().sorted().collect(Collectors.toList());
+        return listCalculateIntervals.stream().sorted().toList();
     }
 }
