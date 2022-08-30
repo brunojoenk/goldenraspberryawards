@@ -28,3 +28,7 @@ java -jar target/goldenraspberryawards-0.0.1-SNAPSHOT.jar
 - http://localhost:8080/h2-console - H2 Database
 - http://localhost:8080/awards/movies/min-max - API to get min max interval of producers winners
 - http://localhost:8080/swagger-ui/index.html#/movie-controller - Swagger - All APIs from MovieController
+
+#### Observation
+- There are no unit tests because the challenge request it (the challenge requested only integration test).
+- There are two branches. In branch upgrade-to-java-18 I made the upgrade java version and apply new resources of new version. In branch turn-async, I made some tests with CompletebleFuture.
